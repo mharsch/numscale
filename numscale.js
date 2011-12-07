@@ -11,10 +11,10 @@ exports.scale = function (input) {
 
 	if (powerOf == 10) {
 		divisor = 1000;
-	} else if (powerOf == 2){
+	} else if (powerOf == 2) {
 		divisor = 1024;
 	} else {
-		throw('invalid powerOf argument');
+		throw ('invalid powerOf argument');
 	}
 
 	while (num >= divisor) {
@@ -24,7 +24,7 @@ exports.scale = function (input) {
 	}
 
 	if (index > (suffix.length - 1))
-		throw('input value too big');
+		throw ('input value too big');
 
 	maxLen -= suffix[index].length; // allow for suffix character(s)
 
