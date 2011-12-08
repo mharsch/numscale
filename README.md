@@ -5,7 +5,7 @@ to indicate scale (Kilo, Mega, Giga, etc.)
 
 ##Examples:
 
-	>var ns = require('./numscale');
+	>var ns = require('numscale');
 	>var myThroughput = {value: 1000000000, powerOf: 10, maxLen: 5};
 	>ns.scale(myThroughput)
 	'1G'
