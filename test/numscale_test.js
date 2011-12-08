@@ -67,5 +67,13 @@ describe('numscale', function () {
 			numscale.scale(input).should.match(/^Err/);
 		});
 
+		it('should handle the zero case',
+		    function () {
+			input.value = 0;
+			numscale.scale(input).should.eql('0');
+		});
+	
+
+
 	});
 });
