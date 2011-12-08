@@ -1,0 +1,22 @@
+{
+  "author": "Michael Harsch <mike@harschsystems.com>",
+  "name": "numscale",
+  "description": "Scale numbers and convert into pretty strings with suffixes",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mharsch/numscale",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mharsch/numscale.git"
+  },
+  "main": "./numscale.js",
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "0.3.x"
+  }
+}
