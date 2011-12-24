@@ -14,7 +14,7 @@ exports.scale = function (input) {
 	} else if (powerOf == 2) {
 		divisor = 1024;
 	} else {
-		throw ('invalid powerOf argument');
+		throw (new Error('invalid powerOf argument'));
 	}
 
 	while (num >= divisor) {
@@ -24,7 +24,7 @@ exports.scale = function (input) {
 	}
 
 	if (index > (suffix.length - 1))
-		throw ('input value too big');
+		throw (new Error('input value too big'));
 
 	maxLen -= suffix[index].length; // allow for suffix character(s)
 
