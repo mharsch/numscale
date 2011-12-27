@@ -2,7 +2,7 @@
   "author": "Michael Harsch <mike@harschsystems.com>",
   "name": "numscale",
   "description": "Scale numbers and convert into pretty strings with suffixes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/mharsch/numscale",
   "repository": {
     "type": "git",

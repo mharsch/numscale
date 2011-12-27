@@ -76,4 +76,16 @@ describe('numscale', function () {
 
 
 	});
+
+	describe('pad left function', function () {
+		it('should return "  1G" given "1G" len: 4', function () {
+		    numscale.padl('1G', 4).should.eql('  1G');
+		});
+	});
+
+	describe('pad right function', function () {
+		it('should return "1G  " given "1G" len: 4', function () {
+		    numscale.padr('1G', 4).should.eql('1G  ');
+		});
+	});
 });

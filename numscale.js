@@ -41,3 +41,29 @@ exports.scale = function (input) {
 
 	return (result + suffix[index]);
 };
+
+exports.padl = function (str, len) {
+	// pad the left side of a string with spaces until it reaches 'len'
+	
+	var rval = '', i;
+
+	for (i = 0; i < len - str.length; i++)
+		rval += ' ';
+
+	rval += str;
+
+	return (rval);
+}
+
+exports.padr = function (str, len) {
+	// pad the right side of a string with spaces until it reaches 'len'
+	
+	var rval = '', i;
+
+	rval += str;
+
+	for (i = 0; i < len - str.length; i++)
+		rval += ' ';
+
+	return (rval);
+}
