@@ -30,3 +30,5 @@ are as follows:
 * value (required) - the number to be scaled and formatted
 * powerOf (optional) - either 2 or 10: sets scaling factor (defaults to 10)
 * maxLen (optional) - maximum length of the string to be returned (default 20)
+
+'value' must be a non-negative positive integer within the safe JavaScript range.

@@ -17,26 +17,24 @@ exports.scale = function (input) {
 		throw (new Error('invalid powerOf argument'));
 	}
 
+    if (input.value < Number.MIN_SAFE_INTEGER ||
+        input.value > Number.MAX_SAFE_INTEGER) {
+        return ('Err');
+    }
+
 	while (num >= divisor) {
 		save = num;
 		num = num / divisor;
 		index++;
 	}
 
-	if (index > (suffix.length - 1))
-		throw (new Error('input value too big'));
-
 	maxLen -= suffix[index].length; // allow for suffix character(s)
 
 	result = num.toString();
 
 	for (var p = result.length; result.length > maxLen; p--) {
-		if (p < 1) {
-			result = 'Err';
-			break;
-		} else {
-			result = num.toPrecision(p);
-		}
+        if (p < 1) return ('Err');
+		result = num.toPrecision(p);
 	}
 
 	return (result + suffix[index]);

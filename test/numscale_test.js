@@ -9,7 +9,7 @@ describe('numscale', function () {
 		it('should return a string', function () {
 			input.value = 1;
 			input.powerOf = 10;
-			numscale.scale(input).should.be.a('string');
+			numscale.scale(input).should.be.a.String;
 		});
 
 		it('should return 1K given 1024 powerOf 2', function () {
@@ -43,7 +43,6 @@ describe('numscale', function () {
 			numscale.scale(input).should.eql('1.5G');
 		});
 	
-
 		it('should not accept an invalid powerOf arg', function () {
 			input.powerOf = 8;
 			should.throws(function () {
@@ -64,7 +63,7 @@ describe('numscale', function () {
 			input.value = 1023;
 			input.powerOf = 2;
 			input.maxLen = 3
-			numscale.scale(input).should.match(/^Err/);
+			numscale.scale(input).should.eql('Err');
 		});
 
 		it('should handle the zero case',
@@ -72,8 +71,25 @@ describe('numscale', function () {
 			input.value = 0;
 			numscale.scale(input).should.eql('0');
 		});
-	
 
+		it('should handle largest possible (safe) int',
+		    function () {
+			input.value = Number.MAX_SAFE_INTEGER;
+            input.powerOf = 2;
+			numscale.scale(input).should.eql('8P');
+		});
+
+		it('should not attempt to scale unsafe numbers',
+		    function () {
+			input.value = Number.MAX_SAFE_INTEGER + 1;
+            numscale.scale(input).should.eql('Err');
+		});
+
+        it('should report error on negative numbers',
+            function () {
+            input.value = -5000;
+            numscale.scale(input).should.eql('Err');
+        });
 
 	});
 
