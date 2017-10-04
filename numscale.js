@@ -23,7 +23,6 @@ exports.scale = function (input) {
     }
 
 	while (num >= divisor) {
-		save = num;
 		num = num / divisor;
 		index++;
 	}
